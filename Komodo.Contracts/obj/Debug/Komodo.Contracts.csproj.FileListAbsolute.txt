@@ -1,0 +1,16 @@
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.dll.config
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.pdb
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.xml
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csprojAssemblyReference.cache
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csproj.CoreCompileInputs.cache
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csproj.CopyComplete
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.dll
+c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.pdb
