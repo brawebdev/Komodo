@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ContractService.cs" />
     <Compile Include="DeveloperService.cs" />
+    <Compile Include="IContractService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeamService.cs" />
   </ItemGroup>

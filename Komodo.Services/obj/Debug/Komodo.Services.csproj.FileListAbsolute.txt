@@ -14,3 +14,25 @@ c:\users\bena\source\repos\Komodo\Komodo.Services\obj\Debug\Komodo.Services.cspr
 c:\users\bena\source\repos\Komodo\Komodo.Services\obj\Debug\Komodo.Services.csproj.CopyComplete
 c:\users\bena\source\repos\Komodo\Komodo.Services\obj\Debug\Komodo.Services.dll
 c:\users\bena\source\repos\Komodo\Komodo.Services\obj\Debug\Komodo.Services.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Services.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Services.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Services.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Data.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Models.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Data.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Data.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Models.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Models.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.csprojAssemblyReference.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.csproj.CoreCompileInputs.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.csproj.CopyComplete
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.pdb

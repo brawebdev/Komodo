@@ -22,6 +22,7 @@ namespace Komodo.Services
             var entity =
                 new Developer()
                 {
+                    DeveloperManagerId = _userId,
                     DeveloperName = model.DeveloperName,
                     HireDate = model.HireDate,
                     TeamId = model.TeamId
@@ -41,10 +42,12 @@ namespace Komodo.Services
                 var query =
                     ctx
                         .Developers
+                        .Where(e => e.DeveloperManagerId == _userId)
                         .Select(
                             e =>
                                 new DeveloperListItem()
                                 {
+                                    DeveloperManagerId = e.DeveloperManagerId,
                                     DeveloperId = e.DeveloperId, 
                                     DeveloperName = e.DeveloperName,
                                     HireDate = e.HireDate,
@@ -63,10 +66,11 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Developers
-                        .Single(e => e.DeveloperId == id);
+                        .Single(e => e.DeveloperId == id && e.DeveloperManagerId == _userId);
                 return
                     new DeveloperDetail
                     {
+                        DeveloperManagerId = entity.DeveloperManagerId,
                         DeveloperId = entity.DeveloperId,
                         DeveloperName = entity.DeveloperName,
                         HireDate = entity.HireDate,
@@ -82,7 +86,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Developers
-                        .Single(e => e.DeveloperId == model.DeveloperId);
+                        .Single(e => e.DeveloperId == model.DeveloperId && e.DeveloperManagerId == _userId);
 
                 entity.DeveloperName = model.DeveloperName;
                 entity.HireDate = model.HireDate;
@@ -99,7 +103,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Developers
-                        .Single(e => e.DeveloperId == Id);
+                        .Single(e => e.DeveloperId == Id && e.DeveloperManagerId == _userId);
 
                 ctx.Developers.Remove(entity);
                 return ctx.SaveChanges() == 1;

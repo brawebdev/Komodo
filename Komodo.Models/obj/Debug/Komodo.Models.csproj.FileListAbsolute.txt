@@ -14,3 +14,19 @@ c:\users\bena\source\repos\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csproj.C
 c:\users\bena\source\repos\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csproj.CopyComplete
 c:\users\bena\source\repos\Komodo\Komodo.Models\obj\Debug\Komodo.Models.dll
 c:\users\bena\source\repos\Komodo\Komodo.Models\obj\Debug\Komodo.Models.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Models.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Models.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Models.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csprojAssemblyReference.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csproj.CoreCompileInputs.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csproj.CopyComplete
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.pdb

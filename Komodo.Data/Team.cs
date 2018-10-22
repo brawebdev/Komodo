@@ -13,6 +13,9 @@ namespace Komodo.Data
         public int TeamId { get; set; }
 
         [Required]
+        public Guid TeamManagerId { get; set; }
+
+        [Required]
         public List<string> TeamMembers { get; set; }
 
         [Required]

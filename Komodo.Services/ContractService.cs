@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Komodo.Services
 {
-    public class ContractService
+    public class ContractService : IContractService
     {
         private readonly Guid _userId;
 
@@ -22,6 +22,7 @@ namespace Komodo.Services
             var entity =
                 new Contract()
                 {
+                    DeveloperManagerId = _userId,
                     DeveloperId = model.DeveloperId,
                     TeamId = model.TeamId   
                 };
@@ -40,10 +41,12 @@ namespace Komodo.Services
                 var query =
                     ctx
                         .Contracts
+                        .Where(e => e.DeveloperManagerId == _userId)
                         .Select(
                             e =>
                                 new ContractListItem()
                                 {
+                                    DeveloperManagerId = e.DeveloperManagerId,
                                     ContractId = e.ContractId,
                                     DeveloperId = e.DeveloperId,
                                     TeamId = e.TeamId
@@ -61,10 +64,11 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Contracts
-                        .Single(e => e.ContractId == id);
+                        .Single(e => e.ContractId == id && e.DeveloperManagerId == _userId);
                 return
                     new ContractDetail
                     {
+                        DeveloperManagerId = entity.DeveloperManagerId,
                         DeveloperId = entity.DeveloperId,
                         ContractId = entity.ContractId,
                         TeamId = entity.TeamId
@@ -79,7 +83,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Contracts
-                        .Single(e => e.ContractId == model.ContractId);
+                        .Single(e => e.ContractId == model.ContractId && e.DeveloperManagerId == _userId);
 
                 entity.TeamId = model.TeamId;
 
@@ -94,7 +98,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Contracts
-                        .Single(e => e.ContractId == Id);
+                        .Single(e => e.ContractId == Id && e.DeveloperManagerId == _userId);
 
                 ctx.Contracts.Remove(entity);
                 return ctx.SaveChanges() == 1;
@@ -103,5 +107,3 @@ namespace Komodo.Services
     }
 }
 
-    }
-}

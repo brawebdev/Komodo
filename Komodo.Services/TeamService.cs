@@ -22,6 +22,7 @@ namespace Komodo.Services
             var entity =
                 new Team()
                 {
+                   TeamManagerId = _userId,
                    TeamMembers = model.TeamMembers,
                    TeamName = model.TeamName
                 };
@@ -40,10 +41,12 @@ namespace Komodo.Services
                 var query =
                     ctx
                         .Teams
+                        .Where(e => e.TeamManagerId == _userId)
                         .Select(
                             e =>
                                 new TeamListItem()
                                 {
+                                    TeamManagerId = e.TeamManagerId,
                                     TeamMembers = e.TeamMembers,
                                     TeamId = e.TeamId,
                                     TeamName = e.TeamName
@@ -61,10 +64,11 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Teams
-                        .Single(e => e.TeamId == id);
+                        .Single(e => e.TeamId == id && e.TeamManagerId == _userId);
                 return
                     new TeamDetail
                     {
+                        TeamManagerId = entity.TeamManagerId,
                         TeamId = entity.TeamId,
                         TeamName = entity.TeamName,
                         TeamMembers = entity.TeamMembers
@@ -79,7 +83,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Teams
-                        .Single(e => e.TeamId == model.TeamId);
+                        .Single(e => e.TeamId == model.TeamId && e.TeamManagerId == _userId);
 
                 entity.TeamMembers = model.TeamMembers;
                 entity.TeamName = model.TeamName;
@@ -95,7 +99,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Teams
-                        .Single(e => e.TeamId == Id);
+                        .Single(e => e.TeamId == Id && e.TeamManagerId == _userId);
 
                 ctx.Teams.Remove(entity);
                 return ctx.SaveChanges() == 1;

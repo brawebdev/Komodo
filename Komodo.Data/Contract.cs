@@ -13,6 +13,9 @@ namespace Komodo.Data
         public int ContractId { get; set; }
 
         [Required]
+        public Guid DeveloperManagerId { get; set; }
+
+        [Required]
         public int DeveloperId { get; set; }
 
         public int TeamId { get; set; }
