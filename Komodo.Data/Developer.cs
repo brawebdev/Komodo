@@ -13,9 +13,6 @@ namespace Komodo.Data
         public int DeveloperId { get; set; }
 
         [Required]
-        public Guid ManagerId { get; set; }
-
-        [Required]
         public string DeveloperName { get; set; }
 
         [Required]

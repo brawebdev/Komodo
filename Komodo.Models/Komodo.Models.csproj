@@ -53,12 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ContractModels\ContractCreate.cs" />
+    <Compile Include="ContractModels\ContractDetail.cs" />
+    <Compile Include="ContractModels\ContractListItem.cs" />
+    <Compile Include="ContractModels\ContractUpdate.cs" />
+    <Compile Include="DeveloperModels\DeveloperCreate.cs" />
+    <Compile Include="DeveloperModels\DeveloperDetail.cs" />
+    <Compile Include="DeveloperModels\DeveloperListItem.cs" />
+    <Compile Include="DeveloperModels\DeveloperUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamModels\TeamCreate.cs" />
+    <Compile Include="TeamModels\TeamDetail.cs" />
+    <Compile Include="TeamModels\TeamListItem.cs" />
+    <Compile Include="TeamModels\TeamUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

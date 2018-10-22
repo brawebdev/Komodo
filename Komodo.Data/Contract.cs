@@ -10,11 +10,11 @@ namespace Komodo.Data
     public class Contract
     {
         [Key]
-        public Guid ContractId { get; set; }
+        public int ContractId { get; set; }
 
         [Required]
         public int DeveloperId { get; set; }
 
-        public int? TeamId { get; set; }
+        public int TeamId { get; set; }
     }
 }
