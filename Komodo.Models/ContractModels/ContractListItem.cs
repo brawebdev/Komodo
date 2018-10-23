@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Komodo.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace Komodo.Models.ContractModels
         public int ContractId { get; set; }
         public int DeveloperId { get; set; }
         public int TeamId { get; set; }
+        public Team Team { get; set; }
+        public Developer Developer { get; set; }
     }
 }

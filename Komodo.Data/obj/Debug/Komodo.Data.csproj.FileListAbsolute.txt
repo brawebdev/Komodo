@@ -30,3 +30,6 @@ C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.csproj.C
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.csproj.CopyComplete
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.dll
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.Migrations.InitialCreate.resources
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.csproj.GenerateResource.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.Migrations.AddedVirtualsToContract.resources

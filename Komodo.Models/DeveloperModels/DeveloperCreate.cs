@@ -11,5 +11,6 @@ namespace Komodo.Models.DeveloperModels
         public string DeveloperName { get; set; }
         public DateTimeOffset HireDate { get; set; }
         public int? TeamId { get; set; }
+        public int DeveloperId { get; set; }
     }
 }

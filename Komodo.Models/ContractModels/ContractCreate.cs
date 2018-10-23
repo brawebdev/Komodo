@@ -10,5 +10,6 @@ namespace Komodo.Models.ContractModels
     {
         public int DeveloperId { get; set; }
         public int TeamId { get; set; }
+        public int ContractId { get; set; }
     }
 }

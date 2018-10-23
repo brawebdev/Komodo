@@ -56,7 +56,6 @@
     <Compile Include="ContractModels\ContractCreate.cs" />
     <Compile Include="ContractModels\ContractDetail.cs" />
     <Compile Include="ContractModels\ContractListItem.cs" />
-    <Compile Include="ContractModels\ContractUpdate.cs" />
     <Compile Include="DeveloperModels\DeveloperCreate.cs" />
     <Compile Include="DeveloperModels\DeveloperDetail.cs" />
     <Compile Include="DeveloperModels\DeveloperListItem.cs" />
@@ -71,6 +70,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Komodo.Data\Komodo.Data.csproj">
+      <Project>{E25E8B35-90B4-469D-9A15-93C570A07259}</Project>
+      <Name>Komodo.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

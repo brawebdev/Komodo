@@ -1,4 +1,5 @@
-﻿using Komodo.Models.DeveloperModels;
+﻿using Komodo.Contracts;
+using Komodo.Models.DeveloperModels;
 using Komodo.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,21 +14,33 @@ namespace Komodo.API.Controllers
     [Authorize]
     public class DeveloperController : ApiController
     {
+        IDeveloperService _developerService;
+
+        public DeveloperController()
+        {
+        }
+
+        public DeveloperController(IDeveloperService mockService)
+        {
+            _developerService = mockService;
+        }
+
         public IHttpActionResult GetAll()
         {
-            DeveloperService developerService = CreateDeveloperService();
-            var developers = developerService.GetDevelopers();
+            CreateDeveloperService();
+
+            var developers = _developerService.GetDevelopers();
             return Ok(developers);
         }
 
         public IHttpActionResult Post(DeveloperCreate developer)
         {
+            CreateDeveloperService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateDeveloperService();
-
-            if (!service.CreateDeveloper(developer))
+            if (!_developerService.CreateDeveloper(developer))
                 return InternalServerError();
 
             return Ok();
@@ -35,12 +48,12 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Put(DeveloperUpdate developer)
         {
+            CreateDeveloperService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateDeveloperService();
-
-            if (!service.UpdateDeveloper(developer))
+            if (!_developerService.UpdateDeveloper(developer))
                 return InternalServerError();
 
             return Ok();
@@ -48,9 +61,9 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateDeveloperService();
+            CreateDeveloperService();
 
-            if (!service.DeleteDeveloper(id))
+            if (!_developerService.DeleteDeveloper(id))
                 return InternalServerError();
 
             return Ok();
@@ -58,16 +71,19 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            DeveloperService developerService = CreateDeveloperService();
-            var developers = developerService.GetDeveloperById(id);
+            CreateDeveloperService();
+
+            var developers = _developerService.GetDeveloperById(id);
             return Ok(developers);
         }
 
-        private DeveloperService CreateDeveloperService()
+        private void CreateDeveloperService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var developerService = new DeveloperService(userId);
-            return developerService;
+            if (_developerService == null)
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                _developerService = new DeveloperService(userId);
+            }
         }
     }
 }

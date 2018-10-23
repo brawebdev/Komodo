@@ -9,5 +9,6 @@ namespace Komodo.Models.TeamModels
     public class TeamCreate
     {
         public string TeamName { get; set; }
+        public int TeamId { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Komodo.Models.TeamModels;
+﻿using Komodo.Contracts;
+using Komodo.Models.TeamModels;
 using Komodo.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,21 +14,34 @@ namespace Komodo.API.Controllers
     [Authorize]
     public class TeamController : ApiController
     {
+        private ITeamService _teamService;
+
+        public TeamController()
+        {
+
+        }
+
+        public TeamController(ITeamService mock)
+        {
+            _teamService = mock;
+        }
+
         public IHttpActionResult GetAll()
         {
-            TeamService teamService = CreateTeamService();
-            var teams = teamService.GetTeams();
+            CreateTeamService();
+
+            var teams = _teamService.GetTeams();
             return Ok(teams);
         }
 
         public IHttpActionResult Post(TeamCreate team)
         {
+            CreateTeamService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateTeamService();
-
-            if (!service.CreateTeam(team))
+            if (!_teamService.CreateTeam(team))
                 return InternalServerError();
 
             return Ok();
@@ -35,12 +49,12 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Put(TeamUpdate team)
         {
+            CreateTeamService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateTeamService();
-
-            if (!service.UpdateTeam(team))
+            if (!_teamService.UpdateTeam(team))
                 return InternalServerError();
 
             return Ok();
@@ -48,25 +62,28 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateTeamService();
+            CreateTeamService();
 
-            if (!service.DeleteTeam(id))
+            if (!_teamService.DeleteTeam(id))
                 return InternalServerError();
 
             return Ok();
         }
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
-            TeamService teamService = CreateTeamService();
-            var teams = teamService.GetTeams();
+            CreateTeamService();
+
+            var teams = _teamService.GetTeamById(id);
             return Ok(teams);
         }
 
-        private TeamService CreateTeamService()
+        private void CreateTeamService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var teamService = new TeamService(userId);
-            return teamService;
+            if (_teamService == null)
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                _teamService = new TeamService(userId);
+            }
         }
     }
 }

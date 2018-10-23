@@ -30,3 +30,6 @@ C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.cspr
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.csproj.CopyComplete
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.dll
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\obj\Debug\Komodo.Models.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Data.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Data.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Models\bin\Debug\Komodo.Data.dll.config

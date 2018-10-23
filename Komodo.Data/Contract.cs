@@ -19,7 +19,7 @@ namespace Komodo.Data
         public int DeveloperId { get; set; }
 
         public int TeamId { get; set; }
-        public virtual Team team { get; set; }
-        public virtual Developer developer { get; set; }
+        public virtual Team Team { get; set; }
+        public virtual Developer Developer { get; set; }
     }
 }

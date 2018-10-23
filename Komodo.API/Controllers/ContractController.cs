@@ -13,34 +13,34 @@ namespace Komodo.API.Controllers
     [Authorize]
     public class ContractController : ApiController
     {
+        private IContractService _contractService;
+
+        public ContractController()
+        {
+            
+        }
+
+        public ContractController(IContractService mockService)
+        {
+            _contractService = mockService;
+        }
+
         public IHttpActionResult GetAll()
         {
-            ContractService contractService = CreateContractService();
-            var contracts = contractService.GetContracts();
+            CreateContractService();
+
+            var contracts = _contractService.GetContracts();
             return Ok(contracts);
         }
 
         public IHttpActionResult Post(ContractCreate contract)
         {
+            CreateContractService();
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateContractService();
-
-            if (!service.CreateContract(contract))
-                return InternalServerError();
-
-            return Ok();
-        }
-
-        public IHttpActionResult Put(ContractUpdate contract)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var service = CreateContractService();
-
-            if (!service.UpdateContract(contract))
+            if (!_contractService.CreateContract(contract))
                 return InternalServerError();
 
             return Ok();
@@ -48,26 +48,29 @@ namespace Komodo.API.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateContractService();
+            CreateContractService();
 
-            if (!service.DeleteContract(id))
+            if (!_contractService.DeleteContract(id))
                 return InternalServerError();
 
             return Ok();
         }
 
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
-            ContractService contractService = CreateContractService();
-            var contracts = contractService.GetContracts();
+            CreateContractService();
+
+            var contracts = _contractService.GetContractById(id);
             return Ok(contracts);
         }
 
-        private ContractService CreateContractService()
+        private void CreateContractService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var contractService = new ContractService(userId);
-            return contractService;
+            if (_contractService == null)
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                _contractService = new ContractService(userId);
+            }
         }
     }
 }

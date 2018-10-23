@@ -50,7 +50,9 @@ namespace Komodo.Services
                                     DeveloperManagerId = e.DeveloperManagerId,
                                     ContractId = e.ContractId,
                                     DeveloperId = e.DeveloperId,
-                                    TeamId = e.TeamId
+                                    TeamId = e.TeamId,
+                                    Team = e.Team,
+                                    Developer = e.Developer
                                 }
                         );
 
@@ -74,21 +76,6 @@ namespace Komodo.Services
                         ContractId = entity.ContractId,
                         TeamId = entity.TeamId
                     };
-            }
-        }
-
-        public bool UpdateContract(ContractUpdate model)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .Contracts
-                        .Single(e => e.ContractId == model.ContractId && e.DeveloperManagerId == _userId);
-
-                entity.TeamId = model.TeamId;
-
-                return ctx.SaveChanges() == 1;
             }
         }
 

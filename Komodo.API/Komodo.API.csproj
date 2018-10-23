@@ -340,6 +340,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Komodo.Contracts\Komodo.Contracts.csproj">
+      <Project>{f3330f53-fc1d-4cfc-ba98-065741bc9b8e}</Project>
+      <Name>Komodo.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Komodo.Data\Komodo.Data.csproj">
       <Project>{E25E8B35-90B4-469D-9A15-93C570A07259}</Project>
       <Name>Komodo.Data</Name>

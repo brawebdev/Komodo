@@ -25,8 +25,7 @@ namespace Komodo.Services
                 {
                     DeveloperManagerId = _userId,
                     DeveloperName = model.DeveloperName,
-                    HireDate = model.HireDate,
-                    TeamId = model.TeamId
+                    HireDate = model.HireDate
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -51,8 +50,7 @@ namespace Komodo.Services
                                     DeveloperManagerId = e.DeveloperManagerId,
                                     DeveloperId = e.DeveloperId, 
                                     DeveloperName = e.DeveloperName,
-                                    HireDate = e.HireDate,
-                                    TeamId = e.TeamId
+                                    HireDate = e.HireDate
                                 }
                         );
 
@@ -74,8 +72,7 @@ namespace Komodo.Services
                         DeveloperManagerId = entity.DeveloperManagerId,
                         DeveloperId = entity.DeveloperId,
                         DeveloperName = entity.DeveloperName,
-                        HireDate = entity.HireDate,
-                        TeamId = entity.TeamId
+                        HireDate = entity.HireDate
                     };
             }
         }
@@ -91,7 +88,6 @@ namespace Komodo.Services
 
                 entity.DeveloperName = model.DeveloperName;
                 entity.HireDate = model.HireDate;
-                entity.TeamId = model.TeamId;
 
                 return ctx.SaveChanges() == 1;
             }

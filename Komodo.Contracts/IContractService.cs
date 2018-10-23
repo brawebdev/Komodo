@@ -15,9 +15,6 @@ namespace Komodo.Services
 
         ContractDetail GetContractById(int id);
 
-
-        bool UpdateContract(ContractUpdate model);
-
         bool DeleteContract(int Id);
     }
 }
