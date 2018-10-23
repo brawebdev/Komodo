@@ -36,3 +36,6 @@ C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.csproj.CopyComplete
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.dll
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\obj\Debug\Komodo.Services.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Contracts.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Contracts.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Services\bin\Debug\Komodo.Contracts.dll.config

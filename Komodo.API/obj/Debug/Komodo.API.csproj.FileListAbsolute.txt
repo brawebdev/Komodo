@@ -272,3 +272,6 @@ C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\obj\Debug\Komodo.API.csproj.Cor
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\obj\Debug\Komodo.API.csproj.CopyComplete
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\obj\Debug\Komodo.API.dll
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\obj\Debug\Komodo.API.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\bin\Komodo.Contracts.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\bin\Komodo.Contracts.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.API\bin\Komodo.Contracts.dll.config

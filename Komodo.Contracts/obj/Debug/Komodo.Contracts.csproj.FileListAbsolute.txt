@@ -14,3 +14,22 @@ c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.cs
 c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csproj.CopyComplete
 c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.dll
 c:\users\bena\source\repos\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Contracts.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Models.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Models.pdb
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Komodo.Models.dll.config
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csprojAssemblyReference.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.csproj.CopyComplete
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.dll
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Contracts\obj\Debug\Komodo.Contracts.pdb

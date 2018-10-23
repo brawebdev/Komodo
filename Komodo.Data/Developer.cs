@@ -20,7 +20,5 @@ namespace Komodo.Data
 
         [Required]
         public DateTimeOffset HireDate { get; set; }
-
-        public int? TeamId { get; set; }
     }
 }

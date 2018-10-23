@@ -1,4 +1,5 @@
-﻿using Komodo.Data;
+﻿using Komodo.Contracts;
+using Komodo.Data;
 using Komodo.Models.TeamModels;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Komodo.Services
 {
-    public class TeamService
+    public class TeamService : ITeamService
     {
         private readonly Guid _userId;
 
@@ -23,7 +24,6 @@ namespace Komodo.Services
                 new Team()
                 {
                    TeamManagerId = _userId,
-                   TeamMembers = model.TeamMembers,
                    TeamName = model.TeamName
                 };
 
@@ -47,7 +47,6 @@ namespace Komodo.Services
                                 new TeamListItem()
                                 {
                                     TeamManagerId = e.TeamManagerId,
-                                    TeamMembers = e.TeamMembers,
                                     TeamId = e.TeamId,
                                     TeamName = e.TeamName
                                 }
@@ -70,8 +69,7 @@ namespace Komodo.Services
                     {
                         TeamManagerId = entity.TeamManagerId,
                         TeamId = entity.TeamId,
-                        TeamName = entity.TeamName,
-                        TeamMembers = entity.TeamMembers
+                        TeamName = entity.TeamName
                     };
             }
         }
@@ -85,7 +83,6 @@ namespace Komodo.Services
                         .Teams
                         .Single(e => e.TeamId == model.TeamId && e.TeamManagerId == _userId);
 
-                entity.TeamMembers = model.TeamMembers;
                 entity.TeamName = model.TeamName;
 
                 return ctx.SaveChanges() == 1;

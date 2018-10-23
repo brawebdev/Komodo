@@ -8,7 +8,6 @@ namespace Komodo.Models.TeamModels
 {
     public class TeamCreate
     {
-        public List<string> TeamMembers { get; set; }
         public string TeamName { get; set; }
     }
 }

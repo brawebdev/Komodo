@@ -1,4 +1,5 @@
-﻿using Komodo.Data;
+﻿using Komodo.Contracts;
+using Komodo.Data;
 using Komodo.Models.ContractModels;
 using System;
 using System.Collections.Generic;

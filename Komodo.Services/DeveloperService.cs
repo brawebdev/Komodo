@@ -1,4 +1,5 @@
-﻿using Komodo.Data;
+﻿using Komodo.Contracts;
+using Komodo.Data;
 using Komodo.Models.DeveloperModels;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Komodo.Services
 {
-    public class DeveloperService
+    public class DeveloperService : IDeveloperService
     {
         private readonly Guid _userId;
 
