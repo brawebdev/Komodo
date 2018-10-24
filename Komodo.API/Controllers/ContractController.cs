@@ -11,6 +11,7 @@ using System.Web.Http;
 namespace Komodo.API.Controllers
 {
     [Authorize]
+    [RoutePrefix("api")]
     public class ContractController : ApiController
     {
         private IContractService _contractService;
@@ -30,6 +31,23 @@ namespace Komodo.API.Controllers
             CreateContractService();
 
             var contracts = _contractService.GetContracts();
+            return Ok(contracts);
+        }
+
+        [Route("team/{teamId}")]
+        public IHttpActionResult GetAllDevelopersOnTeam(int id)
+        {
+            CreateContractService();
+
+            var contracts = _contractService.GetAllDevelopersOnTeam(id);
+            return Ok(contracts);
+        }
+
+        public IHttpActionResult Get(int id)
+        {
+            CreateContractService();
+
+            var contracts = _contractService.GetContractById(id);
             return Ok(contracts);
         }
 
@@ -54,14 +72,6 @@ namespace Komodo.API.Controllers
                 return InternalServerError();
 
             return Ok();
-        }
-
-        public IHttpActionResult Get(int id)
-        {
-            CreateContractService();
-
-            var contracts = _contractService.GetContractById(id);
-            return Ok(contracts);
         }
 
         private void CreateContractService()

@@ -13,6 +13,8 @@ namespace Komodo.Services
 
         IEnumerable<ContractListItem> GetContracts();
 
+        IEnumerable<ContractListItem> GetAllDevelopersOnTeam(int id);
+
         ContractDetail GetContractById(int id);
 
         bool DeleteContract(int Id);

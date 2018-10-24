@@ -38,6 +38,11 @@ namespace Komodo.Services.MockServices
             CallCount--;
             return ReturnValue;
         }
+
+        public IEnumerable<ContractListItem> GetAllDevelopersOnTeam(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

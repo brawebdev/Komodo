@@ -20,19 +20,57 @@ namespace Komodo.Services
 
         public bool CreateContract(ContractCreate model)
         {
-            var entity =
-                new Contract()
-                {
-                    DeveloperManagerId = _userId,
-                    DeveloperId = model.DeveloperId,
-                    TeamId = model.TeamId   
-                };
-
             using (var ctx = new ApplicationDbContext())
             {
+                CheckIfDeveloperExists(ctx, model);
+                CheckIfTeamExists(ctx, model);
+                CheckIfContractExists(ctx, model);
+
+                var entity =
+                    new Contract()
+                    {
+                        DeveloperManagerId = _userId,
+                        DeveloperId = model.DeveloperId,
+                        TeamId = model.TeamId
+                    };
+
                 ctx.Contracts.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        private void CheckIfDeveloperExists(ApplicationDbContext ctx, ContractCreate model)
+        {
+            var entity =
+                ctx
+                    .Developers
+                    .SingleOrDefault(e => e.DeveloperId == model.DeveloperId);
+
+            if (entity == null)
+                throw new ArgumentNullException("The developer you entered does not exist in the system.");
+        }
+
+
+        private void CheckIfTeamExists(ApplicationDbContext ctx, ContractCreate model)
+        {
+            var entity =
+                ctx
+                    .Teams
+                    .SingleOrDefault(e => e.TeamId == model.TeamId);
+
+            if (entity == null)
+                throw new ArgumentNullException("The team you entered does not exist in the system.");
+        }
+
+        private void CheckIfContractExists(ApplicationDbContext ctx, ContractCreate model)
+        {
+            var entity =
+                ctx
+                    .Contracts
+                    .Where(e => e.DeveloperId == model.DeveloperId);
+
+            if (entity != null)
+                throw new Exception("The developer you entered already has an existing contract");
         }
 
         public IEnumerable<ContractListItem> GetContracts()
@@ -79,6 +117,31 @@ namespace Komodo.Services
             }
         }
 
+        public IEnumerable<ContractListItem> GetAllDevelopersOnTeam(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Contracts
+                        .Where(e => e.DeveloperManagerId == _userId && e.TeamId == id)
+                        .Select(
+                            e =>
+                                new ContractListItem()
+                                {
+                                    DeveloperManagerId = e.DeveloperManagerId,
+                                    ContractId = e.ContractId,
+                                    DeveloperId = e.DeveloperId,
+                                    TeamId = e.TeamId,
+                                    Team = e.Team,
+                                    Developer = e.Developer
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         public bool DeleteContract(int Id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -86,7 +149,7 @@ namespace Komodo.Services
                 var entity =
                     ctx
                         .Contracts
-                        .Single(e => e.ContractId == Id && e.DeveloperManagerId == _userId);
+                        .SingleOrDefault(e => e.ContractId == Id && e.DeveloperManagerId == _userId);
 
                 ctx.Contracts.Remove(entity);
                 return ctx.SaveChanges() == 1;
