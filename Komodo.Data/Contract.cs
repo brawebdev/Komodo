@@ -18,6 +18,9 @@ namespace Komodo.Data
         [Required]
         public int DeveloperId { get; set; }
 
+        [Required]
+        public bool IsActive { get; set; }
+
         public int TeamId { get; set; }
         public virtual Team Team { get; set; }
         public virtual Developer Developer { get; set; }

@@ -41,7 +41,23 @@ namespace Komodo.Services.MockServices
 
         public IEnumerable<ContractListItem> GetAllDevelopersOnTeam(int id)
         {
-            throw new NotImplementedException();
+            CallCount++;
+            var @return = new List<ContractListItem> { new ContractListItem { ContractId = 1, TeamId = id } };
+            return @return;
+        }
+
+        public IEnumerable<ContractListItem> GetInactiveContracts()
+        {
+            CallCount++;
+            var @return = new List<ContractListItem> { new ContractListItem { ContractId = 1, IsActive = false } };
+            return @return;
+        }
+
+        public IEnumerable<ContractListItem> GetActiveContracts()
+        {
+            CallCount++;
+            var @return = new List<ContractListItem> { new ContractListItem { ContractId = 1, IsActive = true } };
+            return @return;
         }
     }
 }

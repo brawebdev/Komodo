@@ -15,9 +15,12 @@ namespace Komodo.Contracts
 
         TeamDetail GetTeamById(int id);
 
-
         bool UpdateTeam(TeamUpdate model);
 
         bool DeleteTeam(int Id);
+
+        IEnumerable<TeamListItem> GetActiveTeams();
+
+        IEnumerable<TeamListItem> GetInactiveTeams();
     }
 }

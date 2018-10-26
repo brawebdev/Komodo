@@ -33,6 +33,24 @@ namespace Komodo.API.Controllers
             return Ok(developers);
         }
 
+        [Route("developer/active")]
+        public IHttpActionResult GetActive()
+        {
+            CreateDeveloperService();
+
+            var developers = _developerService.GetActiveDevelopers();
+            return Ok(developers);
+        }
+
+        [Route("developer/inactive")]
+        public IHttpActionResult GetInactive()
+        {
+            CreateDeveloperService();
+
+            var developers = _developerService.GetInactiveDevelopers();
+            return Ok(developers);
+        }
+
         public IHttpActionResult Post(DeveloperCreate developer)
         {
             CreateDeveloperService();

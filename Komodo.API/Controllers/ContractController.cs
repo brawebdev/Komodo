@@ -34,6 +34,24 @@ namespace Komodo.API.Controllers
             return Ok(contracts);
         }
 
+        [Route("contract/active")]
+        public IHttpActionResult GetActive()
+        {
+            CreateContractService();
+
+            var contracts = _contractService.GetActiveContracts();
+            return Ok(contracts);
+        }
+
+        [Route("contract/inactive")]
+        public IHttpActionResult GetInactive()
+        {
+            CreateContractService();
+
+            var contracts = _contractService.GetInactiveContracts();
+            return Ok(contracts);
+        }
+
         [Route("team/{teamId}")]
         public IHttpActionResult GetAllDevelopersOnTeam(int id)
         {

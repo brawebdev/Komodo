@@ -14,5 +14,6 @@ namespace Komodo.Models.ContractModels
         public int ContractId { get; set; }
         public virtual Team Team { get; set; }
         public virtual Developer Developer { get; set; }
+        public bool IsActive { get; set; }
     }
 }

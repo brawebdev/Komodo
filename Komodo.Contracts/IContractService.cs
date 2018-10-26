@@ -18,5 +18,9 @@ namespace Komodo.Services
         ContractDetail GetContractById(int id);
 
         bool DeleteContract(int Id);
+
+        IEnumerable<ContractListItem> GetInactiveContracts();
+
+        IEnumerable<ContractListItem> GetActiveContracts();
     }
 }

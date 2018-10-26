@@ -34,6 +34,24 @@ namespace Komodo.API.Controllers
             return Ok(teams);
         }
 
+        [Route("team/active")]
+        public IHttpActionResult GetActive()
+        {
+            CreateTeamService();
+
+            var teams = _teamService.GetActiveTeams();
+            return Ok(teams);
+        }
+
+        [Route("team/inactive")]
+        public IHttpActionResult GetInactive()
+        {
+            CreateTeamService();
+
+            var teams = _teamService.GetInactiveTeams();
+            return Ok(teams);
+        }
+
         public IHttpActionResult Post(TeamCreate team)
         {
             CreateTeamService();

@@ -31,7 +31,8 @@ namespace Komodo.Services
                     {
                         DeveloperManagerId = _userId,
                         DeveloperId = model.DeveloperId,
-                        TeamId = model.TeamId
+                        TeamId = model.TeamId,
+                        IsActive = true
                     };
 
                 ctx.Contracts.Add(entity);
@@ -67,7 +68,7 @@ namespace Komodo.Services
             var entity =
                 ctx
                     .Contracts
-                    .Where(e => e.DeveloperId == model.DeveloperId);
+                    .Single(e => e.DeveloperId == model.DeveloperId && e.IsActive == true);
 
             if (entity != null)
                 throw new Exception("The developer you entered already has an existing contract");
@@ -90,7 +91,60 @@ namespace Komodo.Services
                                     DeveloperId = e.DeveloperId,
                                     TeamId = e.TeamId,
                                     Team = e.Team,
-                                    Developer = e.Developer
+                                    Developer = e.Developer,
+                                    IsActive = e.IsActive
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<ContractListItem> GetActiveContracts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Contracts
+                        .Where(e => e.DeveloperManagerId == _userId && e.IsActive == true)
+                        .Select(
+                            e =>
+                                new ContractListItem()
+                                {
+                                    DeveloperManagerId = e.DeveloperManagerId,
+                                    ContractId = e.ContractId,
+                                    DeveloperId = e.DeveloperId,
+                                    TeamId = e.TeamId,
+                                    Team = e.Team,
+                                    Developer = e.Developer,
+                                    IsActive = e.IsActive
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<ContractListItem> GetInactiveContracts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Contracts
+                        .Where(e => e.DeveloperManagerId == _userId && e.IsActive == false)
+                        .Select(
+                            e =>
+                                new ContractListItem()
+                                {
+                                    DeveloperManagerId = e.DeveloperManagerId,
+                                    ContractId = e.ContractId,
+                                    DeveloperId = e.DeveloperId,
+                                    TeamId = e.TeamId,
+                                    Team = e.Team,
+                                    Developer = e.Developer,
+                                    IsActive = e.IsActive
                                 }
                         );
 
@@ -112,7 +166,8 @@ namespace Komodo.Services
                         DeveloperManagerId = entity.DeveloperManagerId,
                         DeveloperId = entity.DeveloperId,
                         ContractId = entity.ContractId,
-                        TeamId = entity.TeamId
+                        TeamId = entity.TeamId,
+                        IsActive = entity.IsActive
                     };
             }
         }
@@ -134,7 +189,8 @@ namespace Komodo.Services
                                     DeveloperId = e.DeveloperId,
                                     TeamId = e.TeamId,
                                     Team = e.Team,
-                                    Developer = e.Developer
+                                    Developer = e.Developer,
+                                    IsActive = e.IsActive
                                 }
                         );
 

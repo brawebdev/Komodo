@@ -19,5 +19,9 @@ namespace Komodo.Contracts
         bool UpdateDeveloper(DeveloperUpdate model);
 
         bool DeleteDeveloper(int Id);
+
+        IEnumerable<DeveloperListItem> GetActiveDevelopers();
+
+        IEnumerable<DeveloperListItem> GetInactiveDevelopers();
     }
 }

@@ -43,5 +43,19 @@ namespace Komodo.Services.MockServices
             CallCount--;
             return ReturnValue;
         }
+
+        public IEnumerable<DeveloperListItem> GetActiveDevelopers()
+        {
+            CallCount++;
+            var @return = new List<DeveloperListItem> { new DeveloperListItem { DeveloperId = 1, IsActive = true } };
+            return @return;
+        }
+
+        public IEnumerable<DeveloperListItem> GetInactiveDevelopers()
+        {
+            CallCount++;
+            var @return = new List<DeveloperListItem> { new DeveloperListItem { DeveloperId = 1, IsActive = false } };
+            return @return;
+        }
     }
 }

@@ -25,7 +25,8 @@ namespace Komodo.Services
                 {
                     DeveloperManagerId = _userId,
                     DeveloperName = model.DeveloperName,
-                    HireDate = model.HireDate
+                    HireDate = model.HireDate,
+                    IsActive = true
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -50,7 +51,56 @@ namespace Komodo.Services
                                     DeveloperManagerId = e.DeveloperManagerId,
                                     DeveloperId = e.DeveloperId, 
                                     DeveloperName = e.DeveloperName,
-                                    HireDate = e.HireDate
+                                    HireDate = e.HireDate,
+                                    IsActive = e.IsActive
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<DeveloperListItem> GetActiveDevelopers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Developers
+                        .Where(e => e.DeveloperManagerId == _userId && e.IsActive == true)
+                        .Select(
+                            e =>
+                                new DeveloperListItem()
+                                {
+                                    DeveloperManagerId = e.DeveloperManagerId,
+                                    DeveloperId = e.DeveloperId,
+                                    DeveloperName = e.DeveloperName,
+                                    HireDate = e.HireDate,
+                                    IsActive = e.IsActive
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
+        public IEnumerable<DeveloperListItem> GetInactiveDevelopers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Developers
+                        .Where(e => e.DeveloperManagerId == _userId && e.IsActive == false)
+                        .Select(
+                            e =>
+                                new DeveloperListItem()
+                                {
+                                    DeveloperManagerId = e.DeveloperManagerId,
+                                    DeveloperId = e.DeveloperId,
+                                    DeveloperName = e.DeveloperName,
+                                    HireDate = e.HireDate,
+                                    IsActive = e.IsActive
                                 }
                         );
 
@@ -72,7 +122,8 @@ namespace Komodo.Services
                         DeveloperManagerId = entity.DeveloperManagerId,
                         DeveloperId = entity.DeveloperId,
                         DeveloperName = entity.DeveloperName,
-                        HireDate = entity.HireDate
+                        HireDate = entity.HireDate,
+                        IsActive = entity.IsActive
                     };
             }
         }
@@ -88,6 +139,8 @@ namespace Komodo.Services
 
                 entity.DeveloperName = model.DeveloperName;
                 entity.HireDate = model.HireDate;
+                entity.IsActive = model.IsActive;
+                entity.Contract.IsActive = model.IsActive;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -102,6 +155,12 @@ namespace Komodo.Services
                         .Developers
                         .Single(e => e.DeveloperId == Id && e.DeveloperManagerId == _userId);
 
+                var matchingContracts =
+                    ctx
+                        .Contracts
+                        .Where(e => e.TeamId == Id);
+
+                ctx.Contracts.RemoveRange(matchingContracts);
                 ctx.Developers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

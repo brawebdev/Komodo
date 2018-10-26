@@ -43,5 +43,19 @@ namespace Komodo.Services.MockServices
             CallCount--;
             return ReturnValue;
         }
+
+        public IEnumerable<TeamListItem> GetActiveTeams()
+        {
+            CallCount++;
+            var @return = new List<TeamListItem> { new TeamListItem { TeamId = 1, IsActive = true } };
+            return @return;
+        }
+
+        public IEnumerable<TeamListItem> GetInactiveTeams()
+        {
+            CallCount++;
+            var @return = new List<TeamListItem> { new TeamListItem { TeamId = 1, IsActive = false } };
+            return @return;
+        }
     }
 }

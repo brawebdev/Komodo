@@ -33,3 +33,4 @@ C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.pdb
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.Migrations.InitialCreate.resources
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.csproj.GenerateResource.cache
 C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.Migrations.AddedVirtualsToContract.resources
+C:\Users\bena\Desktop\C# Study\Komodo\Komodo.Data\obj\Debug\Komodo.Data.Migrations.ForeignKeys.resources
